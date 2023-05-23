@@ -1,0 +1,86 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0%;
+    left: 0;
+    padding: 10px  0;
+    opacity: .85;
+    backdrop-filter: blur(.5px);
+    background-color: variaveis.$corDeFundo;
+    visibility: hidden;
+    z-index: 1;
+    @media (max-width: 1023px) {
+        padding: 20px;
+        width: 100vw;
+
+        background-color: variaveis.$vermelho;
+        visibility: visible !important;
+        opacity: 1;
+        margin: auto;
+    }
+    
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__menu_mobile {
+            button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            display: block;
+
+            &__menu_mobile {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button {
+                    display: block;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    border-radius: 3px;
+
+                    img {
+                        margin: auto;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__links {
+        padding: 10px 20px;
+        border: 1px solid white;
+        margin: 10px auto;
+        background-color: black;
+
+        &:hover {
+            border-color: variaveis.$vermelhoEscuro;
+        }
+
+        @media (max-width: 71023px) {
+            display: none;
+            background-color: transparent;
+            border: 1px solid white;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+}
+
+.header--visible {
+    visibility: visible !important;
+    display: block;
+
+
+}

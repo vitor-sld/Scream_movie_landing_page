@@ -1,0 +1,132 @@
+@use 'variaveis';
+@use 'header';
+@use 'hero';
+@use 'sinopse';
+@use 'filmes';
+@use 'footer';
+
+
+/*
+Font: Scream regular, outlined, alternative and alternative outlined
+Author: Samuel Park 
+- park@telia.com 
+- http://members.xoom.com/djura
+*/
+@font-face{
+    font-family: tituloContorno;
+    src: url(../../assets/fonts/Scream_alout-white.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: Scream;
+    src: url(../../assets/fonts/SCREAM__Bold.TTF);
+    font-weight: 700;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: variaveis.$corTextoPrincipal;
+    scroll-behavior:smooth;
+    text-decoration: none;
+}
+
+body{
+    background-color: variaveis.$corDeFundo;
+    position: relative;
+
+    @media (max-width: 1023px) {
+        overflow-x: hidden;
+    }
+} 
+
+@mixin title($font-size:3em){
+    font-size: $font-size;
+    text-transform: uppercase;
+    font-family: Scream;
+    text-align: center;
+
+    @media (max-width: 1023px){
+        font-size: 28px;
+    }
+
+}
+@mixin text($font-size:16px){
+    font-size: $font-size;
+    line-height: $font-size+10px;
+    letter-spacing: 0.8px
+}
+
+
+.title--big{
+    @include title(7em);
+    color: variaveis.$vermelhoEscuro;    
+
+    @media (max-width: 1023px){
+        font-size: 30px;
+    }
+    @media (max-width: 768px){
+        font-size: 38px;
+        width: 90vw;
+    }
+}
+.title{
+    @include title(4em);
+    color: variaveis.$vermelhoEscuro;  
+
+
+    @media (max-width: 768px){
+        font-size: 25px;
+        width: 90vw;
+        
+    }
+   
+}
+.title--small{
+    @include title(2em);
+    margin-bottom: 20px;
+    color: variaveis.$vermelho;
+    text-align: center;
+
+    @media (max-width: 1023px){
+        font-size: 20px;
+        width: 90vw;
+     }
+    @media (max-width: 768px){
+        width: auto;
+
+    }
+
+    &--branding{
+        color: variaveis.$corDaLogo;
+        font-family: tituloContorno;
+        font-weight: 700;
+        margin-bottom: 0;
+
+    }
+    }
+
+.text--big{
+    @include text(22px);
+    text-align: center;
+
+    @media (max-width: 1023px) {
+        @include text(13px);
+    }
+}
+.text{
+    @include text();
+    text-align: center;
+}
+
+.text--small{
+    @media (max-width: 768px){
+        p{
+            width: 100vw;
+            margin: auto;
+        }
+    }
+}
+@media (max-width: 1023px) {
+}

@@ -1,0 +1,155 @@
+@use 'variaveis';
+
+.hero {
+    margin-top: -60px;
+    padding: 0 0 2.5vw;
+    min-height: 100vh;
+    height: 100%;
+    background-image: url(../../img/hero__background.png);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+
+
+    @media (max-width: 1023px) {
+        background-image: url(../../img/hero__background.png);
+        max-width: 100vw;
+        width: 100%;
+        background-size: contain;
+    }
+
+    @media(max-width:768px) {
+        background-image: url(../../img/ghotface_mobile_hero.jpg);
+        background-repeat: no-repeat;
+        padding-top: 10vh;
+        height: 300px;
+        margin: -100px auto 250px;
+    }
+
+    .title__hero--small{
+        font-family: Scream;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: variaveis.$vermelho;
+        text-align: center;
+    }
+
+
+    &__aside {
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+
+
+        @media(max-width:1023px) {
+            display: none;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 1023px) {
+                width: 400px;
+                text-align: center;
+                margin: auto;
+            }
+
+            @media(max-width:768px) {
+                margin-top: 40px;
+            }
+
+
+            &__links {
+                margin: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+
+                .hero__link {
+                    width: 100px;
+                    padding: 5px 0;
+                    transition: .5s;
+                    background-color: variaveis.$vermelhoEscuro;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        max-width: 600px;
+        margin-left: 20px;
+        padding-top: 100px;
+        
+
+
+
+        @media (max-width: 768px) {
+            height: 100%;
+            margin-top: calc(20vh + 200px);
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+        &__item {
+            margin: auto;
+            vertical-align: middle;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+    }
+
+    &__classificacao {
+        text-align: center;
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: 50px;
+            max-width: 100%;
+            text-align: left;
+            padding-right: 20px;
+        }
+    }
+
+    &__see-more {
+        width: 100%;
+        height: 45px;
+
+        @media(max-width:768px) {
+            display: none;
+        }
+
+
+        &__icon {
+            height: 40px;
+            margin: auto;
+            display: block;
+            margin-top: -10px;
+            transform: 0.75s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
